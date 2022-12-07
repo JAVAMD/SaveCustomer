@@ -1,6 +1,7 @@
 package com.cjc.carloan.app.serviceimpl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,6 +30,15 @@ public class CustomerDetailsImpl implements CustomerDetailsServiceInterface {
 	public List<CustomerDetails> getAllCustomer() {
 		
 		return cdr.findAll();
+	}
+
+
+
+	@Override
+	public Optional<CustomerDetails> getOneCustomer(Integer customerId) {
+		   
+		
+		return cdr.findById(customerId);
 	}
 
 }
